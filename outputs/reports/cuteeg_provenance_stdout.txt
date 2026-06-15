@@ -1,0 +1,45 @@
+Subj  top  per-file provenance (counts)
+S1     12  All_Fixations(old-typo)=2 unique=10
+S2     11  All_Fixations(old-typo)=4 unique=7
+S3     11  All_Fixations(old-typo)=5 unique=6
+S4     11  All_Fixations(old-typo)=2 unique=9
+S5     11  All_Fixations(old-typo)=2 unique=9
+S6     11  All_Fixations(old-typo)=2 unique=9
+S7     11  unique=11
+S10    11  All_Fixations(old-typo)=2 unique=9
+S11    11  All_Fixations(old-typo)=2 unique=9
+S12    11  All_Fixations(old-typo)=3 unique=8
+S13    12  All_Fixations(old-typo)=7 unique=5
+S14    11  All_Fixations(old-typo)=3 unique=8
+S15    10  All_Fixations(old-typo)=8 unique=2
+S16    11  All_Fixations(old-typo)=6 unique=5
+S17    10  All_Fixations(old-typo)=1 unique=9
+S18    11  All_Fixations(old-typo)=3 unique=8
+S19    11  All_Fixations(old-typo)=4 unique=7
+S22    11  All_Fixations(old-typo)=4 unique=7
+S24    11  EEG_All_Fixations - ½Ĉğs=2 unique=9
+S25    11  All_Fixations(old-typo)=2 unique=9
+S26    11  All_Fixations(old-typo)=2 unique=9
+S27    11  All_Fixations(old-typo)=2 unique=9
+S28    11  All_Fixations(old-typo)=2 unique=9
+S29    11  All_Fixations(old-typo)=4 EEG_All_Fixations - ½Ĉğs=4 unique=7
+S30    11  All_Fixations(old-typo)=3 unique=8
+S31    11  All_Fixations(old-typo)=2 unique=9
+S32    10  All_Fixations(old-typo)=8 unique=2
+S34    11  All_Fixations(old-typo)=2 unique=9
+S35     7  All_Fixations(old-typo)=2 unique=5
+S37    11  All_Fixations(old-typo)=2 unique=9
+S38    11  All_Fixations(old-typo)=4 unique=7
+
+===== AGGREGATE (all subjects) =====
+  total cuteeg files we USE      : 336
+  identical to some OTHER folder : 97
+  unique to cuteeg (not elsewhere): 239
+  breakdown of matches by folder:
+    All_Fixations(old-typo)   : 95
+    EEG_All_Fixations - ½Ĉğs: 6
+
+===== CHECK 1: any cuteeg file identical to EEG_All_Questions? =====
+  NO - not one cuteeg file is identical to any EEG_All_Questions file.
+
+Full per-file table written to: /Users/kritsakorn/Documents/intershipProject/outputs/reports/cuteeg_provenance_table.txt

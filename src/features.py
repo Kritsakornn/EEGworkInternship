@@ -5,16 +5,34 @@ Each STFT time frame (2 s window, 0.1 s step) becomes one 33-dim feature
 vector: 11 channels x {theta, alpha, beta}, ordered as in the paper eq. (3):
 [RSP_theta_Fp1, RSP_alpha_Fp1, RSP_beta_Fp1, ..., RSP_beta_P4].
 
-The cognitive EEG is already band-pass filtered (~1-30 Hz, verified by
-inspect_data.py), so no extra filtering is applied here.
+Preprocessing matches the paper: a 1-30 Hz third-order Butterworth IIR
+band-pass plus a 60 Hz notch (config.FILTER_*), applied per channel in
+load_question_eeg before the +/-150 uV clip. Most CutEEG files arrived
+already filtered (line noise removed, ~89% power in 1-30 Hz), so re-applying
+is near-idempotent on those; it cleans the minority that were under-filtered
+(some retained >100 Hz content a 1-30 band-pass cannot leave -- see
+inspect_data.py). A 3rd-order Butterworth is a gentle roll-off, not a brick
+wall, so ~10% residual >30 Hz is expected and harmless: RSP sums only
+theta/alpha/beta (4-30 Hz) and normalizes within them.
 
 Run: python src/features.py
 """
 import numpy as np
 import scipy.io as sio
-from scipy.signal import stft
+from scipy.signal import butter, filtfilt, iirnotch, stft
 
 import config
+
+
+def _bandpass_notch(eeg):
+    """Paper preprocessing: 1-30 Hz 3rd-order Butterworth IIR band-pass + 60 Hz
+    notch, applied per channel (zero-phase filtfilt). Near-idempotent on the
+    already-filtered files; cleans the minority that arrived under-filtered."""
+    lo, hi = config.FILTER_BAND
+    b, a = butter(config.FILTER_ORDER, [lo, hi], btype="band", fs=config.FS)
+    bn, an = iirnotch(config.NOTCH_HZ, config.NOTCH_Q, fs=config.FS)
+    eeg = filtfilt(b, a, eeg, axis=0)
+    return filtfilt(bn, an, eeg, axis=0)
 
 
 def find_cognitive_files(subject, q):
@@ -33,6 +51,7 @@ def load_question_eeg(subject, q):
     if not parts:
         raise FileNotFoundError(f"no cognitive files for {subject} Q{q}")
     eeg = np.concatenate(parts, axis=0)
+    eeg = _bandpass_notch(eeg)  # paper 1-30 Hz band-pass + 60 Hz notch
     # clip eye-blink/motion spikes to +/-150 uV (paper artifact threshold) so a
     # 30 mV transient cannot dominate a frame's spectral power; keeps all frames
     return np.clip(eeg, -config.ARTIFACT_V, config.ARTIFACT_V)

@@ -1,0 +1,39 @@
+Subj  #top dupOfAll unique  verdict
+S1      12        2     10  MIXED
+S2      11        4      7  MIXED
+S3      11        5      6  MIXED
+S4      11        2      9  MIXED
+S5      11        2      9  MIXED
+S6      11        2      9  MIXED
+S7      11        0     11  all unique
+S10     11        2      9  MIXED
+S11     11        2      9  MIXED
+S12     11        3      8  MIXED
+S13     12        7      5  MIXED
+S14     11        3      8  MIXED
+S15     10        8      2  MIXED
+S16     11        6      5  MIXED
+S17     10        1      9  MIXED
+S18     11        3      8  MIXED
+S19     11        4      7  MIXED
+S20      0        0      0  all unique
+S21      0        0      0  all unique
+S22     11        4      7  MIXED
+S23      0        0      0  all unique
+S24     11        2      9  MIXED
+S25     11        2      9  MIXED
+S26     11        2      9  MIXED
+S27     11        2      9  MIXED
+S28     11        2      9  MIXED
+S29     11        4      7  MIXED
+S30     11        3      8  MIXED
+S31     11        2      9  MIXED
+S32     10        8      2  MIXED
+S33      0        0      0  all unique
+S34     11        2      9  MIXED
+S35      7        2      5  MIXED
+S36      0        0      0  all unique
+S37     11        2      9  MIXED
+S38     11        4      7  MIXED
+S39     --  (no CutEEG_Cognitive folder)
+S40     --  (no CutEEG_Cognitive folder)

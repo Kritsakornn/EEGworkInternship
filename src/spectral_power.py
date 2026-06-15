@@ -36,8 +36,8 @@ def main():
     agg["state"] = pd.Categorical(agg["state"], categories=STATES, ordered=True)
     agg = agg.sort_values(["subject", "q", "state"]).reset_index(drop=True)
 
-    config.OUTPUT_DIR.mkdir(exist_ok=True)
-    out = config.OUTPUT_DIR / "spectral_power.csv"
+    config.TABLE_DIR.mkdir(parents=True, exist_ok=True)
+    out = config.TABLE_DIR / "spectral_power.csv"
     agg.to_csv(out, index=False)
 
     print(agg.head(12).to_string(index=False))

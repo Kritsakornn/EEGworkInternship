@@ -1,0 +1,7 @@
+
+===== UNIQUE files analysed: 239 =====
+  FULL (100% — same data, re-cut)   :  212  (88.7%)
+  PARTIAL                           :    0  ( 0.0%)
+  INDEPENDENT (~0%)                 :   27  (11.3%)
+
+Per-file report written to: /Users/kritsakorn/Documents/intershipProject/outputs/reports/unique_subsegment_report.txt

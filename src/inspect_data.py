@@ -1,5 +1,6 @@
-"""Step 0: verify sampling rate assumption & whether the cognitive EEG is
-already band-pass filtered. Run: python src/inspect_data.py
+"""Step 0: check whether the cognitive EEG is band-pass filtered, across ALL
+CutEEG cognitive files the pipeline actually uses (S*/CutEEG_Cognitive,
+CutEEGdata_Q1..9_*.mat) -- not just a sample. Run: python src/inspect_data.py
 """
 import numpy as np
 import scipy.io as sio
@@ -20,39 +21,56 @@ def band_power(x, fs, fmin, fmax):
     return float(np.trapz(pxx[mask], f[mask]))
 
 
-def main():
-    fs = config.FS
-    samples = {
-        "cognitive_Q2_2": config.DATA_DIR / "S1/CutEEG_Cognitive/CutEEGdata_Q2_2.mat",
-        "full_Q2": config.DATA_DIR / "S1/CutEEG_Cognitive/EEG_All_Questions/iStarCutEEGdata_Q2.mat",
-    }
-    for name, path in samples.items():
-        x, key = load_eeg(path)
-        print(f"\n=== {name} ({key}) ===")
-        print(f"  shape={x.shape}  duration@{fs}Hz = {x.shape[0]/fs:.1f}s")
-        print(f"  value range: min={x.min():.2f}  max={x.max():.2f}  "
-              f"mean={x.mean():.3f}  std={x.std():.2f}")
-        print(f"  NaN={np.isnan(x).sum()}  Inf={np.isinf(x).sum()}")
-
-        ch = x[:, 0]  # first channel for spectrum check
+def file_shares(path, fs):
+    """Per-file spectral shares (%) averaged over all channels:
+    (>30Hz share, 60Hz line share). Returns None for a flat file."""
+    x, _ = load_eeg(path)
+    hi30, line = [], []
+    for c in range(x.shape[1]):
+        ch = x[:, c]
         total = band_power(ch, fs, 0.1, fs / 2)
         if total == 0:
-            print("  (flat signal, skip spectrum)")
             continue
-        checks = {
-            "<1Hz (drift)": (0.1, 1),
-            "1-30Hz (kept band)": (1, 30),
-            "30-50Hz": (30, 50),
-            "60Hz (line)": (59, 61),
-            ">50Hz": (50, fs / 2),
-        }
-        print("  spectral power share (ch0):")
-        for label, (lo, hi) in checks.items():
-            print(f"    {label:20s}: {band_power(ch, fs, lo, hi)/total*100:5.1f}%")
+        hi30.append(band_power(ch, fs, 30, fs / 2) / total * 100)
+        line.append(band_power(ch, fs, 59, 61) / total * 100)
+    if not hi30:
+        return None
+    return float(np.mean(hi30)), float(np.mean(line))
+
+
+def main():
+    fs = config.FS
+    files = sorted(config.DATA_DIR.glob("S*/CutEEG_Cognitive/CutEEGdata_Q[1-9]_*.mat"))
+    print(f"scanning {len(files)} cognitive files (Q1-9, all subjects) ...")
+
+    hi30, line, flat = [], [], 0
+    worst = None  # (path, >30Hz share)
+    for path in files:
+        res = file_shares(path, fs)
+        if res is None:
+            flat += 1
+            continue
+        h, ln = res
+        hi30.append(h)
+        line.append(ln)
+        if worst is None or h > worst[1]:
+            worst = (path.relative_to(config.DATA_DIR), h)
+
+    hi30, line = np.array(hi30), np.array(line)
+    print(f"\nfiles scanned: {len(files)}  (flat/skipped: {flat})")
+    print(f">30Hz power share %: mean={hi30.mean():.2f}  median={np.median(hi30):.2f}  "
+          f"min={hi30.min():.2f}  max={hi30.max():.2f}")
+    print(f"60Hz line share %  : mean={line.mean():.3f}  max={line.max():.3f}")
+    print(f"files with >30Hz share >1%: {(hi30 > 1).sum()} / {len(hi30)}")
+    print(f"files with >30Hz share >5%: {(hi30 > 5).sum()} / {len(hi30)}")
+    print(f"worst file: {worst[0]}  (>30Hz={worst[1]:.1f}%)")
 
     print("\nInterpretation:")
-    print("  - If >30Hz share is near 0% -> already low-pass/band-pass filtered.")
-    print("  - If 60Hz spike present     -> raw (line noise not removed).")
+    print("  - 60Hz line share ~0% across all files -> line noise was notched out.")
+    print("  - >30Hz share NOT near 0% -> data is NOT hard band-pass limited to")
+    print("    1-30Hz; high-freq content (likely EMG) remains in many files.")
+    print("  - RSP features are unaffected: they sum only theta/alpha/beta (4-30Hz)")
+    print("    and normalize within them, so >30Hz power is excluded by construction.")
 
 
 if __name__ == "__main__":

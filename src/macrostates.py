@@ -111,8 +111,8 @@ def cluster_frames():
 def main():
     _, groups, labels, names = cluster_frames()
     sri = compute_sri(labels, groups, names)
-    config.OUTPUT_DIR.mkdir(exist_ok=True)
-    out = config.OUTPUT_DIR / "sri.csv"
+    config.TABLE_DIR.mkdir(parents=True, exist_ok=True)
+    out = config.TABLE_DIR / "sri.csv"
     sri.to_csv(out, index=False)
 
     print(sri.head(12).to_string(index=False))

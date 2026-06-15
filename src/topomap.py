@@ -64,8 +64,8 @@ def main():
             axes[r, c].set_title(f"{state} {band}")
         fig.colorbar(im, ax=axes[:, c].tolist(), shrink=0.6, label=f"{band} RSP")
 
-    config.OUTPUT_DIR.mkdir(exist_ok=True)
-    out = config.OUTPUT_DIR / "topomaps.png"
+    config.FIG_DIR.mkdir(parents=True, exist_ok=True)
+    out = config.FIG_DIR / "topomaps.png"
     fig.savefig(out, dpi=120, bbox_inches="tight")
 
     front_idx = [config.CHANNELS_19.index(c) * 3 + 0 for c in FRONTAL]  # theta

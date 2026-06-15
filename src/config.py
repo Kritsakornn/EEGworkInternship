@@ -10,9 +10,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "dataset" / "iStar_data"
 OUTPUT_DIR = ROOT / "outputs"
+FIG_DIR = OUTPUT_DIR / "figures"    # .png plots
+TABLE_DIR = OUTPUT_DIR / "tables"   # .csv data
+REPORT_DIR = OUTPUT_DIR / "reports" # .txt reports / provenance
 
 # --- acquisition (from paper; verified by inspect_data.py) ---
 FS = 1000  # Hz, sampling rate stated in the paper
+
+# --- preprocessing filter (paper: 1-30 Hz 3rd-order Butterworth IIR + 60 Hz notch) ---
+FILTER_BAND = (1, 30)  # Hz, band-pass edges
+FILTER_ORDER = 3       # Butterworth order
+NOTCH_HZ = 60          # Hz, power-line notch
+NOTCH_Q = 30           # notch quality factor
 
 # --- artifact handling ---
 # Paper rejects epochs whose amplitude exceeds +/-150 uV (eye-blink/motion).

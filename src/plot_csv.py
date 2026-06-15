@@ -17,7 +17,7 @@ BANDS = list(config.BANDS)  # ["theta", "alpha", "beta"]
 
 
 def plot_sri():
-    df = pd.read_csv(config.OUTPUT_DIR / "sri.csv")
+    df = pd.read_csv(config.TABLE_DIR / "sri.csv")
     mean = df.groupby("q")[STATES].mean()  # (9, 3), rows sum to ~1
 
     fig, ax = plt.subplots(figsize=(9, 5))
@@ -34,7 +34,7 @@ def plot_sri():
 
 
 def plot_band_power():
-    df = pd.read_csv(config.OUTPUT_DIR / "spectral_power.csv")
+    df = pd.read_csv(config.TABLE_DIR / "spectral_power.csv")
     g = df.groupby("state")[BANDS]
     mean, std = g.mean().reindex(STATES), g.std().reindex(STATES)
 
@@ -54,7 +54,7 @@ def plot_band_power():
 
 def plot_sri_dist():
     """Boxplots: spread of each state's SRI across all 243 subject-questions."""
-    df = pd.read_csv(config.OUTPUT_DIR / "sri.csv")
+    df = pd.read_csv(config.TABLE_DIR / "sri.csv")
     fig, ax = plt.subplots(figsize=(7, 5))
     ax.boxplot([df[s] for s in STATES], tick_labels=STATES, showmeans=True)
     ax.set_ylabel("SRI proportion")
@@ -64,7 +64,7 @@ def plot_sri_dist():
 
 def plot_sri_heatmap():
     """Heatmap of Reasoning SRI for every subject x question (between-subject view)."""
-    df = pd.read_csv(config.OUTPUT_DIR / "sri.csv")
+    df = pd.read_csv(config.TABLE_DIR / "sri.csv")
     df = df.sort_values("subject", key=lambda s: s.str[1:].astype(int))
     pivot = df.pivot(index="subject", columns="q", values="Reasoning")
 
@@ -80,7 +80,7 @@ def plot_sri_heatmap():
 
 def plot_band_dist():
     """Boxplots: spread of theta/alpha/beta RSP per state (state separability)."""
-    df = pd.read_csv(config.OUTPUT_DIR / "spectral_power.csv")
+    df = pd.read_csv(config.TABLE_DIR / "spectral_power.csv")
     fig, axes = plt.subplots(1, len(BANDS), figsize=(11, 4), sharey=True)
     for ax, band in zip(axes, BANDS):
         ax.boxplot([df[df["state"] == s][band] for s in STATES],
@@ -93,12 +93,12 @@ def plot_band_dist():
 
 
 def main():
-    config.OUTPUT_DIR.mkdir(exist_ok=True)
+    config.FIG_DIR.mkdir(parents=True, exist_ok=True)
     figs = [("sri", plot_sri()), ("band_power", plot_band_power()),
             ("sri_dist", plot_sri_dist()), ("sri_heatmap", plot_sri_heatmap()),
             ("band_dist", plot_band_dist())]
     for name, fig in figs:
-        out = config.OUTPUT_DIR / f"{name}.png"
+        out = config.FIG_DIR / f"{name}.png"
         fig.savefig(out, dpi=120, bbox_inches="tight")
         print(f"saved -> {out}")
 
