@@ -1,0 +1,337 @@
+subject	file	shape	provenance
+S1	CutEEGdata_Q13_2.mat	(57621, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S1	CutEEGdata_Q18_2.mat	(63315, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S1	CutEEGdata_Q1_0.mat	(44530, 19)	UNIQUE
+S1	CutEEGdata_Q1_1.mat	(45230, 19)	UNIQUE
+S1	CutEEGdata_Q2_2.mat	(18918, 19)	UNIQUE
+S1	CutEEGdata_Q3_2.mat	(13257, 19)	UNIQUE
+S1	CutEEGdata_Q4_2.mat	(37969, 19)	UNIQUE
+S1	CutEEGdata_Q5_2.mat	(26280, 19)	UNIQUE
+S1	CutEEGdata_Q6_2.mat	(33108, 19)	UNIQUE
+S1	CutEEGdata_Q7_2.mat	(27013, 19)	UNIQUE
+S1	CutEEGdata_Q8_2.mat	(87397, 19)	UNIQUE
+S1	CutEEGdata_Q9_2.mat	(19951, 19)	UNIQUE
+S2	CutEEGdata_Q13_2.mat	(105549, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S2	CutEEGdata_Q18_2.mat	(29676, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S2	CutEEGdata_Q1_1.mat	(29676, 19)	UNIQUE
+S2	CutEEGdata_Q2_2.mat	(37937, 19)	UNIQUE
+S2	CutEEGdata_Q3_2.mat	(15888, 19)	UNIQUE
+S2	CutEEGdata_Q4_2.mat	(56490, 19)	UNIQUE
+S2	CutEEGdata_Q5_2.mat	(32109, 19)	UNIQUE
+S2	CutEEGdata_Q6_2.mat	(30843, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S2	CutEEGdata_Q7_2.mat	(2464, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S2	CutEEGdata_Q8_2.mat	(22683, 19)	UNIQUE
+S2	CutEEGdata_Q9_2.mat	(38272, 19)	UNIQUE
+S3	CutEEGdata_Q13_2.mat	(127763, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S3	CutEEGdata_Q18_2.mat	(58652, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S3	CutEEGdata_Q1_1.mat	(38470, 19)	UNIQUE
+S3	CutEEGdata_Q2_2.mat	(34040, 19)	UNIQUE
+S3	CutEEGdata_Q3_2.mat	(22715, 19)	UNIQUE
+S3	CutEEGdata_Q4_2.mat	(33806, 19)	UNIQUE
+S3	CutEEGdata_Q5_2.mat	(31242, 19)	== EEG_All_Fixations/CutEEGdata_Q5_AllFixaitons.mat
+S3	CutEEGdata_Q6_2.mat	(28211, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S3	CutEEGdata_Q7_2.mat	(54655, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S3	CutEEGdata_Q8_2.mat	(21917, 19)	UNIQUE
+S3	CutEEGdata_Q9_2.mat	(18585, 19)	UNIQUE
+S4	CutEEGdata_Q13_2.mat	(41168, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S4	CutEEGdata_Q18_2.mat	(70144, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S4	CutEEGdata_Q1_1.mat	(74205, 19)	UNIQUE
+S4	CutEEGdata_Q2_2.mat	(40134, 19)	UNIQUE
+S4	CutEEGdata_Q3_2.mat	(47496, 19)	UNIQUE
+S4	CutEEGdata_Q4_2.mat	(58086, 19)	UNIQUE
+S4	CutEEGdata_Q5_2.mat	(31409, 19)	UNIQUE
+S4	CutEEGdata_Q6_2.mat	(20950, 19)	UNIQUE
+S4	CutEEGdata_Q7_2.mat	(24314, 19)	UNIQUE
+S4	CutEEGdata_Q8_2.mat	(54990, 19)	UNIQUE
+S4	CutEEGdata_Q9_2.mat	(28811, 19)	UNIQUE
+S5	CutEEGdata_Q13_2.mat	(93759, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S5	CutEEGdata_Q18_2.mat	(86333, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S5	CutEEGdata_Q1_1.mat	(21051, 19)	UNIQUE
+S5	CutEEGdata_Q2_2.mat	(16287, 19)	UNIQUE
+S5	CutEEGdata_Q3_2.mat	(17620, 19)	UNIQUE
+S5	CutEEGdata_Q4_2.mat	(51227, 19)	UNIQUE
+S5	CutEEGdata_Q5_2.mat	(25113, 19)	UNIQUE
+S5	CutEEGdata_Q6_2.mat	(47029, 19)	UNIQUE
+S5	CutEEGdata_Q7_2.mat	(17953, 19)	UNIQUE
+S5	CutEEGdata_Q8_2.mat	(30975, 19)	UNIQUE
+S5	CutEEGdata_Q9_2.mat	(16520, 19)	UNIQUE
+S6	CutEEGdata_Q13_2.mat	(71477, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S6	CutEEGdata_Q18_2.mat	(68347, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S6	CutEEGdata_Q1_1.mat	(47662, 19)	UNIQUE
+S6	CutEEGdata_Q2_2.mat	(41502, 19)	UNIQUE
+S6	CutEEGdata_Q3_2.mat	(49628, 19)	UNIQUE
+S6	CutEEGdata_Q4_2.mat	(20784, 19)	UNIQUE
+S6	CutEEGdata_Q5_2.mat	(21050, 19)	UNIQUE
+S6	CutEEGdata_Q6_2.mat	(38503, 19)	UNIQUE
+S6	CutEEGdata_Q7_2.mat	(34073, 19)	UNIQUE
+S6	CutEEGdata_Q8_2.mat	(67347, 19)	UNIQUE
+S6	CutEEGdata_Q9_2.mat	(94892, 19)	UNIQUE
+S7	CutEEGdata_Q13_2.mat	(105747, 19)	UNIQUE
+S7	CutEEGdata_Q18_2.mat	(64381, 19)	UNIQUE
+S7	CutEEGdata_Q1_1.mat	(73575, 19)	UNIQUE
+S7	CutEEGdata_Q2_2.mat	(37570, 19)	UNIQUE
+S7	CutEEGdata_Q3_2.mat	(18619, 19)	UNIQUE
+S7	CutEEGdata_Q4_2.mat	(22316, 19)	UNIQUE
+S7	CutEEGdata_Q5_2.mat	(50492, 19)	UNIQUE
+S7	CutEEGdata_Q6_2.mat	(54289, 19)	UNIQUE
+S7	CutEEGdata_Q7_2.mat	(44964, 19)	UNIQUE
+S7	CutEEGdata_Q8_2.mat	(38470, 19)	UNIQUE
+S7	CutEEGdata_Q9_2.mat	(19651, 19)	UNIQUE
+S10	CutEEGdata_Q13_2.mat	(36804, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S10	CutEEGdata_Q18_2.mat	(130297, 19)	UNIQUE
+S10	CutEEGdata_Q1_1.mat	(39902, 19)	UNIQUE
+S10	CutEEGdata_Q2_2.mat	(25814, 19)	UNIQUE
+S10	CutEEGdata_Q3_2.mat	(21350, 19)	UNIQUE
+S10	CutEEGdata_Q4_2.mat	(86132, 19)	UNIQUE
+S10	CutEEGdata_Q5_2.mat	(96856, 19)	UNIQUE
+S10	CutEEGdata_Q6_2.mat	(157243, 19)	UNIQUE
+S10	CutEEGdata_Q7_2.mat	(69579, 19)	UNIQUE
+S10	CutEEGdata_Q8_2.mat	(58787, 19)	== EEG_All_Fixations/CutEEGdata_Q8_AllFixaitons.mat
+S10	CutEEGdata_Q9_2.mat	(65382, 19)	UNIQUE
+S11	CutEEGdata_Q13_2.mat	(47130, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S11	CutEEGdata_Q18_2.mat	(67680, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S11	CutEEGdata_Q1_1.mat	(26978, 19)	UNIQUE
+S11	CutEEGdata_Q2_2.mat	(34672, 19)	UNIQUE
+S11	CutEEGdata_Q3_2.mat	(22449, 19)	UNIQUE
+S11	CutEEGdata_Q4_2.mat	(30143, 19)	UNIQUE
+S11	CutEEGdata_Q5_2.mat	(53424, 19)	UNIQUE
+S11	CutEEGdata_Q6_2.mat	(42833, 19)	UNIQUE
+S11	CutEEGdata_Q7_2.mat	(17487, 19)	UNIQUE
+S11	CutEEGdata_Q8_2.mat	(53624, 19)	UNIQUE
+S11	CutEEGdata_Q9_2.mat	(14622, 19)	UNIQUE
+S12	CutEEGdata_Q13_2.mat	(90195, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S12	CutEEGdata_Q18_2.mat	(147117, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S12	CutEEGdata_Q1_1.mat	(22248, 19)	UNIQUE
+S12	CutEEGdata_Q2_2.mat	(43866, 19)	UNIQUE
+S12	CutEEGdata_Q3_2.mat	(45764, 19)	UNIQUE
+S12	CutEEGdata_Q4_2.mat	(30909, 19)	UNIQUE
+S12	CutEEGdata_Q5_2.mat	(38503, 19)	UNIQUE
+S12	CutEEGdata_Q6_2.mat	(15722, 19)	UNIQUE
+S12	CutEEGdata_Q7_2.mat	(17486, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S12	CutEEGdata_Q8_2.mat	(70676, 19)	UNIQUE
+S12	CutEEGdata_Q9_2.mat	(8660, 19)	UNIQUE
+S13	CutEEGdata_Q13_2.mat	(146314, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S13	CutEEGdata_Q18_2.mat	(77971, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S13	CutEEGdata_Q1_1.mat	(49959, 19)	UNIQUE
+S13	CutEEGdata_Q2_2.mat	(61284, 19)	UNIQUE
+S13	CutEEGdata_Q3_2.mat	(21984, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S13	CutEEGdata_Q4_2.mat	(21217, 19)	UNIQUE
+S13	CutEEGdata_Q5_2.mat	(20384, 19)	UNIQUE
+S13	CutEEGdata_Q6_1.mat	(44797, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S13	CutEEGdata_Q6_2.mat	(44797, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S13	CutEEGdata_Q7_2.mat	(52024, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S13	CutEEGdata_Q8_2.mat	(9957, 19)	== EEG_All_Fixations/CutEEGdata_Q8_AllFixaitons.mat
+S13	CutEEGdata_Q9_2.mat	(5496, 19)	UNIQUE
+S14	CutEEGdata_Q13_2.mat	(59586, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S14	CutEEGdata_Q18_2.mat	(115676, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S14	CutEEGdata_Q1_1.mat	(29078, 19)	UNIQUE
+S14	CutEEGdata_Q2_2.mat	(56456, 19)	UNIQUE
+S14	CutEEGdata_Q3_2.mat	(18120, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S14	CutEEGdata_Q4_2.mat	(65547, 19)	UNIQUE
+S14	CutEEGdata_Q5_2.mat	(18419, 19)	UNIQUE
+S14	CutEEGdata_Q6_2.mat	(57787, 19)	UNIQUE
+S14	CutEEGdata_Q7_2.mat	(14556, 19)	UNIQUE
+S14	CutEEGdata_Q8_2.mat	(50660, 19)	UNIQUE
+S14	CutEEGdata_Q9_2.mat	(28646, 19)	UNIQUE
+S15	CutEEGdata_Q13_2.mat	(83598, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S15	CutEEGdata_Q18_2.mat	(28312, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S15	CutEEGdata_Q1_1.mat	(14422, 19)	UNIQUE
+S15	CutEEGdata_Q2_1.mat	(21350, 19)	== EEG_All_Fixations/CutEEGdata_Q2_AllFixaitons.mat
+S15	CutEEGdata_Q3_2.mat	(19418, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S15	CutEEGdata_Q4_2.mat	(33406, 19)	== EEG_All_Fixations/CutEEGdata_Q4_AllFixaitons.mat
+S15	CutEEGdata_Q6_2.mat	(11192, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S15	CutEEGdata_Q7_2.mat	(5097, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S15	CutEEGdata_Q8_2.mat	(38003, 19)	UNIQUE
+S15	CutEEGdata_Q9_2.mat	(1701, 19)	== EEG_All_Fixations/CutEEGdata_Q9_AllFixaitons.mat
+S16	CutEEGdata_Q13_2.mat	(24548, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S16	CutEEGdata_Q18_2.mat	(47295, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S16	CutEEGdata_Q1_1.mat	(38870, 19)	UNIQUE
+S16	CutEEGdata_Q2_2.mat	(25646, 19)	UNIQUE
+S16	CutEEGdata_Q3_2.mat	(19252, 19)	UNIQUE
+S16	CutEEGdata_Q4_2.mat	(1567, 19)	== EEG_All_Fixations/CutEEGdata_Q4_AllFixaitons.mat
+S16	CutEEGdata_Q5_2.mat	(27012, 19)	UNIQUE
+S16	CutEEGdata_Q6_2.mat	(61019, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S16	CutEEGdata_Q7_2.mat	(58055, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S16	CutEEGdata_Q8_2.mat	(19085, 19)	UNIQUE
+S16	CutEEGdata_Q9_2.mat	(26147, 19)	== EEG_All_Fixations/CutEEGdata_Q9_AllFixaitons.mat
+S17	CutEEGdata_Q13_2.mat	(35172, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S17	CutEEGdata_Q18_2.mat	(25013, 19)	UNIQUE
+S17	CutEEGdata_Q2_2.mat	(33907, 19)	UNIQUE
+S17	CutEEGdata_Q3_2.mat	(33007, 19)	UNIQUE
+S17	CutEEGdata_Q4_2.mat	(63350, 19)	UNIQUE
+S17	CutEEGdata_Q5_2.mat	(17653, 19)	UNIQUE
+S17	CutEEGdata_Q6_2.mat	(31476, 19)	UNIQUE
+S17	CutEEGdata_Q7_2.mat	(25280, 19)	UNIQUE
+S17	CutEEGdata_Q8_2.mat	(69313, 19)	UNIQUE
+S17	CutEEGdata_Q9_2.mat	(19585, 19)	UNIQUE
+S18	CutEEGdata_Q13_2.mat	(50759, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S18	CutEEGdata_Q18_2.mat	(85931, 19)	UNIQUE
+S18	CutEEGdata_Q1_1.mat	(42231, 19)	UNIQUE
+S18	CutEEGdata_Q2_2.mat	(24713, 19)	UNIQUE
+S18	CutEEGdata_Q3_2.mat	(3964, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S18	CutEEGdata_Q4_2.mat	(66481, 19)	UNIQUE
+S18	CutEEGdata_Q5_2.mat	(56822, 19)	UNIQUE
+S18	CutEEGdata_Q6_2.mat	(40734, 19)	UNIQUE
+S18	CutEEGdata_Q7_2.mat	(48827, 19)	UNIQUE
+S18	CutEEGdata_Q8_2.mat	(95422, 19)	== EEG_All_Fixations/CutEEGdata_Q8_AllFixaitons.mat
+S18	CutEEGdata_Q9_2.mat	(29243, 19)	UNIQUE
+S19	CutEEGdata_Q13_2.mat	(215227, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S19	CutEEGdata_Q18_2.mat	(151745, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S19	CutEEGdata_Q1_1.mat	(17753, 19)	UNIQUE
+S19	CutEEGdata_Q2_2.mat	(24914, 19)	UNIQUE
+S19	CutEEGdata_Q3_2.mat	(19919, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S19	CutEEGdata_Q4_2.mat	(16354, 19)	UNIQUE
+S19	CutEEGdata_Q5_2.mat	(72108, 19)	UNIQUE
+S19	CutEEGdata_Q6_2.mat	(48962, 19)	UNIQUE
+S19	CutEEGdata_Q7_2.mat	(23282, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S19	CutEEGdata_Q8_2.mat	(52124, 19)	UNIQUE
+S19	CutEEGdata_Q9_2.mat	(32007, 19)	UNIQUE
+S22	CutEEGdata_Q13_2.mat	(103284, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S22	CutEEGdata_Q18_2.mat	(41801, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S22	CutEEGdata_Q1_1.mat	(13423, 19)	UNIQUE
+S22	CutEEGdata_Q2_2.mat	(92827, 19)	UNIQUE
+S22	CutEEGdata_Q3_2.mat	(35106, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S22	CutEEGdata_Q4_2.mat	(43132, 19)	UNIQUE
+S22	CutEEGdata_Q5_2.mat	(28743, 19)	UNIQUE
+S22	CutEEGdata_Q6_2.mat	(10259, 19)	UNIQUE
+S22	CutEEGdata_Q7_2.mat	(37039, 19)	UNIQUE
+S22	CutEEGdata_Q8_2.mat	(77039, 19)	UNIQUE
+S22	CutEEGdata_Q9_2.mat	(27246, 19)	== EEG_All_Fixations/CutEEGdata_Q9_AllFixaitons.mat
+S24	CutEEGdata_Q13_2.mat	(95990, 19)	UNIQUE
+S24	CutEEGdata_Q18_2.mat	(79771, 19)	== EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q18_AllFixations.mat
+S24	CutEEGdata_Q1_1.mat	(29511, 19)	UNIQUE
+S24	CutEEGdata_Q2_2.mat	(72476, 19)	UNIQUE
+S24	CutEEGdata_Q3_2.mat	(24647, 19)	UNIQUE
+S24	CutEEGdata_Q4_2.mat	(53758, 19)	UNIQUE
+S24	CutEEGdata_Q5_2.mat	(39801, 19)	UNIQUE
+S24	CutEEGdata_Q6_2.mat	(55589, 19)	== EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q6_AllFixations.mat
+S24	CutEEGdata_Q7_2.mat	(22549, 19)	UNIQUE
+S24	CutEEGdata_Q8_2.mat	(50194, 19)	UNIQUE
+S24	CutEEGdata_Q9_2.mat	(22482, 19)	UNIQUE
+S25	CutEEGdata_Q13_2.mat	(160604, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S25	CutEEGdata_Q18_2.mat	(67045, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S25	CutEEGdata_Q1_1.mat	(5530, 19)	UNIQUE
+S25	CutEEGdata_Q2_2.mat	(19185, 19)	UNIQUE
+S25	CutEEGdata_Q3_2.mat	(14155, 19)	UNIQUE
+S25	CutEEGdata_Q4_2.mat	(45030, 19)	UNIQUE
+S25	CutEEGdata_Q5_2.mat	(51924, 19)	UNIQUE
+S25	CutEEGdata_Q6_2.mat	(49627, 19)	UNIQUE
+S25	CutEEGdata_Q7_2.mat	(15354, 19)	UNIQUE
+S25	CutEEGdata_Q8_2.mat	(25147, 19)	UNIQUE
+S25	CutEEGdata_Q9_2.mat	(35871, 19)	UNIQUE
+S26	CutEEGdata_Q13_2.mat	(68545, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S26	CutEEGdata_Q18_2.mat	(40901, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S26	CutEEGdata_Q1_1.mat	(37238, 19)	UNIQUE
+S26	CutEEGdata_Q2_2.mat	(70344, 19)	UNIQUE
+S26	CutEEGdata_Q3_2.mat	(25815, 19)	UNIQUE
+S26	CutEEGdata_Q4_2.mat	(35405, 19)	UNIQUE
+S26	CutEEGdata_Q5_2.mat	(19652, 19)	UNIQUE
+S26	CutEEGdata_Q6_2.mat	(24082, 19)	UNIQUE
+S26	CutEEGdata_Q7_2.mat	(27545, 19)	UNIQUE
+S26	CutEEGdata_Q8_2.mat	(69712, 19)	UNIQUE
+S26	CutEEGdata_Q9_2.mat	(20651, 19)	UNIQUE
+S27	CutEEGdata_Q13_2.mat	(110211, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S27	CutEEGdata_Q18_2.mat	(121435, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S27	CutEEGdata_Q1_1.mat	(25380, 19)	UNIQUE
+S27	CutEEGdata_Q2_2.mat	(15822, 19)	UNIQUE
+S27	CutEEGdata_Q3_2.mat	(13056, 19)	UNIQUE
+S27	CutEEGdata_Q4_2.mat	(23681, 19)	UNIQUE
+S27	CutEEGdata_Q5_2.mat	(24282, 19)	UNIQUE
+S27	CutEEGdata_Q6_2.mat	(33806, 19)	UNIQUE
+S27	CutEEGdata_Q7_2.mat	(31709, 19)	UNIQUE
+S27	CutEEGdata_Q8_2.mat	(27145, 19)	UNIQUE
+S27	CutEEGdata_Q9_2.mat	(45164, 19)	UNIQUE
+S28	CutEEGdata_Q13_2.mat	(82768, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S28	CutEEGdata_Q18_2.mat	(68546, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S28	CutEEGdata_Q1_1.mat	(32541, 19)	UNIQUE
+S28	CutEEGdata_Q2_2.mat	(37604, 19)	UNIQUE
+S28	CutEEGdata_Q3_2.mat	(31443, 19)	UNIQUE
+S28	CutEEGdata_Q4_2.mat	(30009, 19)	UNIQUE
+S28	CutEEGdata_Q5_2.mat	(19153, 19)	UNIQUE
+S28	CutEEGdata_Q6_2.mat	(31775, 19)	UNIQUE
+S28	CutEEGdata_Q7_2.mat	(46931, 19)	UNIQUE
+S28	CutEEGdata_Q8_2.mat	(59553, 19)	UNIQUE
+S28	CutEEGdata_Q9_2.mat	(26746, 19)	UNIQUE
+S29	CutEEGdata_Q13_2.mat	(80837, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q13_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q13_AllFixations.mat
+S29	CutEEGdata_Q18_2.mat	(129331, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q18_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q18_AllFixations.mat
+S29	CutEEGdata_Q1_1.mat	(19550, 19)	UNIQUE
+S29	CutEEGdata_Q2_2.mat	(25080, 19)	UNIQUE
+S29	CutEEGdata_Q3_2.mat	(18419, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q3_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q3_AllFixations.mat
+S29	CutEEGdata_Q4_2.mat	(24381, 19)	UNIQUE
+S29	CutEEGdata_Q5_2.mat	(60385, 19)	UNIQUE
+S29	CutEEGdata_Q6_2.mat	(10193, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q6_AllFixaitons.mat; == EEG_All_Fixations - ½Ĉğs/CutEEGdata_Q6_AllFixations.mat
+S29	CutEEGdata_Q7_2.mat	(33574, 19)	UNIQUE
+S29	CutEEGdata_Q8_2.mat	(24181, 19)	UNIQUE
+S29	CutEEGdata_Q9_2.mat	(15954, 19)	UNIQUE
+S30	CutEEGdata_Q13_2.mat	(34475, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S30	CutEEGdata_Q18_2.mat	(179371, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S30	CutEEGdata_Q1_1.mat	(34810, 19)	UNIQUE
+S30	CutEEGdata_Q2_2.mat	(22784, 19)	UNIQUE
+S30	CutEEGdata_Q3_2.mat	(12958, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S30	CutEEGdata_Q4_2.mat	(15856, 19)	UNIQUE
+S30	CutEEGdata_Q5_2.mat	(10094, 19)	UNIQUE
+S30	CutEEGdata_Q6_2.mat	(29678, 19)	UNIQUE
+S30	CutEEGdata_Q7_2.mat	(17654, 19)	UNIQUE
+S30	CutEEGdata_Q8_2.mat	(22884, 19)	UNIQUE
+S30	CutEEGdata_Q9_2.mat	(28114, 19)	UNIQUE
+S31	CutEEGdata_Q13_2.mat	(39470, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S31	CutEEGdata_Q18_2.mat	(93093, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S31	CutEEGdata_Q1_1.mat	(26212, 19)	UNIQUE
+S31	CutEEGdata_Q2_2.mat	(56556, 19)	UNIQUE
+S31	CutEEGdata_Q3_2.mat	(22450, 19)	UNIQUE
+S31	CutEEGdata_Q4_2.mat	(36938, 19)	UNIQUE
+S31	CutEEGdata_Q5_2.mat	(25880, 19)	UNIQUE
+S31	CutEEGdata_Q6_2.mat	(32408, 19)	UNIQUE
+S31	CutEEGdata_Q7_2.mat	(33974, 19)	UNIQUE
+S31	CutEEGdata_Q8_2.mat	(24248, 19)	UNIQUE
+S31	CutEEGdata_Q9_2.mat	(33574, 19)	UNIQUE
+S32	CutEEGdata_Q13_2.mat	(62651, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S32	CutEEGdata_Q18_2.mat	(272651, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S32	CutEEGdata_Q1_1.mat	(17520, 19)	UNIQUE
+S32	CutEEGdata_Q2_2.mat	(121504, 19)	UNIQUE
+S32	CutEEGdata_Q3_2.mat	(26513, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S32	CutEEGdata_Q4_2.mat	(14455, 19)	== EEG_All_Fixations/CutEEGdata_Q4_AllFixaitons.mat
+S32	CutEEGdata_Q5_2.mat	(11791, 19)	== EEG_All_Fixations/CutEEGdata_Q5_AllFixaitons.mat
+S32	CutEEGdata_Q6_2.mat	(18886, 19)	== EEG_All_Fixations/CutEEGdata_Q6_AllFixaitons.mat
+S32	CutEEGdata_Q7_2.mat	(4697, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S32	CutEEGdata_Q8_2.mat	(25512, 19)	== EEG_All_Fixations/CutEEGdata_Q8_AllFixaitons.mat
+S34	CutEEGdata_Q13_2.mat	(81302, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S34	CutEEGdata_Q18_2.mat	(181557, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S34	CutEEGdata_Q1_1.mat	(33740, 19)	UNIQUE
+S34	CutEEGdata_Q2_2.mat	(113176, 19)	UNIQUE
+S34	CutEEGdata_Q3_2.mat	(26347, 19)	UNIQUE
+S34	CutEEGdata_Q4_2.mat	(18119, 19)	UNIQUE
+S34	CutEEGdata_Q5_2.mat	(62417, 19)	UNIQUE
+S34	CutEEGdata_Q6_2.mat	(17886, 19)	UNIQUE
+S34	CutEEGdata_Q7_2.mat	(28477, 19)	UNIQUE
+S34	CutEEGdata_Q8_2.mat	(49594, 19)	UNIQUE
+S34	CutEEGdata_Q9_2.mat	(41400, 19)	UNIQUE
+S35	CutEEGdata_Q1_1.mat	(10225, 19)	UNIQUE
+S35	CutEEGdata_Q2_2.mat	(46363, 19)	UNIQUE
+S35	CutEEGdata_Q3_2.mat	(34106, 19)	== EEG_All_Fixations/CutEEGdata_Q3_AllFixaitons.mat
+S35	CutEEGdata_Q4_2.mat	(92759, 19)	UNIQUE
+S35	CutEEGdata_Q5_2.mat	(38668, 19)	UNIQUE
+S35	CutEEGdata_Q6_2.mat	(49526, 19)	UNIQUE
+S35	CutEEGdata_Q7_2.mat	(1931, 19)	== EEG_All_Fixations/CutEEGdata_Q7_AllFixaitons.mat
+S37	CutEEGdata_Q13_2.mat	(75773, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S37	CutEEGdata_Q18_2.mat	(33308, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S37	CutEEGdata_Q1_1.mat	(35206, 19)	UNIQUE
+S37	CutEEGdata_Q2_2.mat	(51727, 19)	UNIQUE
+S37	CutEEGdata_Q3_2.mat	(21683, 19)	UNIQUE
+S37	CutEEGdata_Q4_2.mat	(42034, 19)	UNIQUE
+S37	CutEEGdata_Q5_2.mat	(19085, 19)	UNIQUE
+S37	CutEEGdata_Q6_2.mat	(25081, 19)	UNIQUE
+S37	CutEEGdata_Q7_2.mat	(34806, 19)	UNIQUE
+S37	CutEEGdata_Q8_2.mat	(53158, 19)	UNIQUE
+S37	CutEEGdata_Q9_2.mat	(13291, 19)	UNIQUE
+S38	CutEEGdata_Q13_2.mat	(35404, 19)	== EEG_All_Fixations/CutEEGdata_Q13_AllFixaitons.mat
+S38	CutEEGdata_Q18_2.mat	(55123, 19)	== EEG_All_Fixations/CutEEGdata_Q18_AllFixaitons.mat
+S38	CutEEGdata_Q1_1.mat	(30575, 19)	UNIQUE
+S38	CutEEGdata_Q2_2.mat	(69909, 19)	UNIQUE
+S38	CutEEGdata_Q3_2.mat	(12024, 19)	UNIQUE
+S38	CutEEGdata_Q4_2.mat	(111142, 19)	== EEG_All_Fixations/CutEEGdata_Q4_AllFixaitons.mat
+S38	CutEEGdata_Q5_2.mat	(19052, 19)	UNIQUE
+S38	CutEEGdata_Q6_2.mat	(94191, 19)	UNIQUE
+S38	CutEEGdata_Q7_2.mat	(16553, 19)	UNIQUE
+S38	CutEEGdata_Q8_2.mat	(40201, 19)	== EEG_All_Fixations/CutEEGdata_Q8_AllFixaitons.mat
+S38	CutEEGdata_Q9_2.mat	(7961, 19)	UNIQUE

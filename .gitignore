@@ -1,0 +1,13 @@
+# Large data — keep out of git (store separately: cloud / external drive)
+dataset/
+docs/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS / editors
+.DS_Store
+.obsidian/
