@@ -7,7 +7,8 @@ vector: 11 channels x {theta, alpha, beta}, ordered as in the paper eq. (3):
 
 Preprocessing matches the paper: a 1-30 Hz third-order Butterworth IIR
 band-pass plus a 60 Hz notch (config.FILTER_*), applied per channel in
-load_question_eeg before the +/-150 uV clip. Most CutEEG files arrived
+load_question_eeg. STFT frames whose 2 s window exceeds +/-150 uV are then
+rejected (dropped) in _rsp, as in the paper. Most CutEEG files arrived
 already filtered (line noise removed, ~89% power in 1-30 Hz), so re-applying
 is near-idempotent on those; it cleans the minority that were under-filtered
 (some retained >100 Hz content a 1-30 band-pass cannot leave -- see
@@ -51,18 +52,27 @@ def load_question_eeg(subject, q):
     if not parts:
         raise FileNotFoundError(f"no cognitive files for {subject} Q{q}")
     eeg = np.concatenate(parts, axis=0)
-    eeg = _bandpass_notch(eeg)  # paper 1-30 Hz band-pass + 60 Hz notch
-    # clip eye-blink/motion spikes to +/-150 uV (paper artifact threshold) so a
-    # 30 mV transient cannot dominate a frame's spectral power; keeps all frames
-    return np.clip(eeg, -config.ARTIFACT_V, config.ARTIFACT_V)
+    return _bandpass_notch(eeg)  # paper 1-30 Hz band-pass + 60 Hz notch
 
 
-def _rsp(eeg, ch_idx):
-    """RSP features for the given channel indices -> (n_frames, 3*len(ch_idx))."""
+def _rsp(eeg, ch_idx, mask_idx=None):
+    """RSP features for the given channel indices -> (n_frames, 3*len(ch_idx)).
+
+    mask_idx selects which channels define the artifact-rejection mask; defaults
+    to ch_idx. Pass the task channels here when featurising all 19 channels so
+    the surviving frames match the 11-channel clustering frame-for-frame."""
     sel = eeg[:, ch_idx]
+    mask_sel = sel if mask_idx is None else eeg[:, mask_idx]
     # 2 s window, 0.1 s step; clamp to signal length for short segments
     nperseg = min(int(config.WIN_SEC * config.FS), sel.shape[0])
     noverlap = max(0, nperseg - int(config.STEP_SEC * config.FS))
+
+    # paper artifact rejection: drop any STFT frame whose 2 s window contains a
+    # sample exceeding +/-150 uV in any analysed channel (eye-blink/motion).
+    # Replaces clipping: a clipped spike still injects broadband power, so the
+    # contaminated frame is removed rather than capped.
+    bad_sample = (np.abs(mask_sel) > config.ARTIFACT_V).any(axis=1)  # (n_samples,)
+    hop = nperseg - noverlap
 
     per_channel = []
     for ch in range(sel.shape[1]):
@@ -78,7 +88,11 @@ def _rsp(eeg, ch_idx):
         rsp = np.divide(bands, total, out=np.zeros_like(bands), where=total > 0)
         per_channel.append(rsp)                          # (frame, 3)
 
-    return np.concatenate(per_channel, axis=1)           # (frame, 3*n_ch)
+    feats = np.concatenate(per_channel, axis=1)          # (frame, 3*n_ch)
+    # drop frames whose 2 s window touched an artifact spike (paper rejection)
+    keep = np.array([not bad_sample[i * hop:i * hop + nperseg].any()
+                     for i in range(feats.shape[0])], dtype=bool)
+    return feats[keep]
 
 
 def rsp_features(eeg19):
@@ -87,8 +101,11 @@ def rsp_features(eeg19):
 
 
 def rsp_features_allch(eeg19):
-    """(n_samples, 19) -> (n_frames, 57): RSP for all 19 channels (for topomaps)."""
-    return _rsp(eeg19, list(range(eeg19.shape[1])))
+    """(n_samples, 19) -> (n_frames, 57): RSP for all 19 channels (for topomaps).
+
+    Rejects frames using the 11 task channels (CH_IDX_11), so the surviving
+    rows line up 1:1 with rsp_features() and the cluster labels built from it."""
+    return _rsp(eeg19, list(range(eeg19.shape[1])), mask_idx=config.CH_IDX_11)
 
 
 def main():

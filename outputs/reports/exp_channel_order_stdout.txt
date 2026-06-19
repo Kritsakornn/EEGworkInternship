@@ -1,0 +1,14 @@
+subjects=22  (professor AUC reference = 0.850)
+
+IDENTITY across seeds (K-medoids instability check):
+  identity         seed=0  best|r|=0.050  AUC=0.448
+  identity         seed=1  best|r|=0.043  AUC=0.474
+  identity         seed=2  best|r|=0.039  AUC=0.448
+  identity         seed=3  best|r|=0.033  AUC=0.432
+  identity         seed=4  best|r|=0.026  AUC=0.362
+
+ALTERNATIVE channel orders (seed 0):
+  lr_swap          seed=0  best|r|=0.050  AUC=0.448
+  reverse          seed=0  best|r|=0.032  AUC=0.339
+  random1          seed=0  best|r|=0.037  AUC=0.386
+  random2          seed=0  best|r|=0.054  AUC=0.590

@@ -1,0 +1,6 @@
+method,mean_acc,score_r,score_mae
+kmedoids (baseline),0.581,0.135,1.773
+kmeans,0.561,0.14,1.773
+gmm_hard,0.53,-0.039,1.955
+gmm_soft,0.53,-0.063,1.955
+agglomerative,0.545,0.01,1.818

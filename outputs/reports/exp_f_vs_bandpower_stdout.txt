@@ -1,0 +1,22 @@
+subjects=22  (band-power vs professor f1/f2/f3)
+
+merged rows: 198  subjects: 22
+
+Pearson corr (rows = our mean RSP theta/alpha/beta, cols = f1/f2/f3):
+          f1     f2     f3
+theta -0.031  0.031  0.004
+alpha  0.012 -0.059  0.039
+beta   0.031 -0.010 -0.023
+
+best band<->f assignment: {'theta': 'f1', 'alpha': 'f2', 'beta': 'f3'}
+  per-pair |r| = [np.float64(0.031), np.float64(0.059), np.float64(0.023)]   mean|r| = 0.038
+  max single |r| = 0.059
+
+value check under best assignment (f/100 vs our band RSP):
+  theta: our mean=0.473  prof f1/100 mean=0.399  MAE=0.133
+  alpha: our mean=0.207  prof f2/100 mean=0.312  MAE=0.139
+  beta : our mean=0.320  prof f3/100 mean=0.290  MAE=0.120
+
+benchmark macrostate SRI vs f1/f2/f3: best mean|r| = 0.041
+
+INTERPRETATION: band-power explains f1/f2/f3 well only if its mean|r| is high (>~0.6) AND clearly beats the macrostate SRI benchmark above.

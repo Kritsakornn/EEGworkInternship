@@ -26,9 +26,11 @@ NOTCH_Q = 30           # notch quality factor
 # --- artifact handling ---
 # Paper rejects epochs whose amplitude exceeds +/-150 uV (eye-blink/motion).
 # Data is in VOLTS (typical |value| ~1e-5 = ~10 uV), so 150 uV = 150e-6 V.
-# We clip (winsorize) rather than drop whole 2 s STFT frames: dropping any
-# frame touching a spike would delete ~48% of frames and empty 25 questions,
-# breaking the complete-9 set; clipping caps spike power and keeps all data.
+# We DROP every STFT frame whose 2 s window touches a spike (paper rejection),
+# not clip: a clipped spike still injects broadband power into the frame's
+# spectrum. ~38% of overlapping frames are dropped (sparse spikes inflate via
+# the 0.1 s hop) and a few questions empty out, so frame_complete_subjects()
+# keeps only subjects whose Q1-Q9 all survive.
 ARTIFACT_V = 150e-6
 
 # --- channels ---

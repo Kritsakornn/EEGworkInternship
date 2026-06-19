@@ -15,7 +15,8 @@ import mne
 
 import config
 from features import load_question_eeg, rsp_features_allch
-from macrostates import cluster_frames, complete_subjects, STATES
+from macrostates import (cluster_frames, complete_subjects,
+                         frame_complete_subjects, STATES)
 
 BANDS = list(config.BANDS)  # ["theta", "alpha", "beta"]
 # old 10-20 names -> modern names known to MNE's standard_1020 montage
@@ -33,7 +34,9 @@ def build_allch_matrix(subjects):
 
 def main():
     _, _, labels, names = cluster_frames()
-    subjects = complete_subjects()
+    # Same frame-complete subjects cluster_frames() used, so all-channel rows
+    # (rsp_features_allch rejects on the 11 task channels) align 1:1 with labels.
+    subjects = frame_complete_subjects(complete_subjects())
     A = build_allch_matrix(subjects)  # (N, 57) = 19 ch x 3 bands
     assert len(A) == len(labels), (len(A), len(labels))
     state_of = np.array([names[l] for l in labels])

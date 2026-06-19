@@ -44,6 +44,19 @@ def complete_subjects():
     return subs
 
 
+def frame_complete_subjects(subjects):
+    """Of the file-complete subjects, keep only those whose every Q1-Q9 still
+    has >=1 frame after artifact rejection. Dropping spike frames can empty a
+    question entirely, which would break the complete-9 design, so such
+    subjects are excluded here rather than silently producing NaN SRI rows."""
+    keep = []
+    for s in subjects:
+        if all(len(rsp_features(load_question_eeg(s, q)))
+               for q in config.VISUAL_QUESTIONS):
+            keep.append(s)
+    return keep
+
+
 def build_matrix(subjects):
     """Stack RSP frames from all (subject, question) -> X, and a group label list."""
     feats, groups = [], []
@@ -81,8 +94,13 @@ def compute_sri(labels, groups, names):
 
 def cluster_frames():
     """Run the full Layer-1 pipeline. Returns (X, groups, labels, names)."""
-    subjects = complete_subjects()
-    print(f"complete subjects (Q1-Q9): {len(subjects)}")
+    file_subjects = complete_subjects()
+    subjects = frame_complete_subjects(file_subjects)
+    emptied = [s for s in file_subjects if s not in subjects]
+    print(f"complete subjects (Q1-Q9, files): {len(file_subjects)}")
+    print(f"still complete after artifact rejection: {len(subjects)}")
+    if emptied:
+        print(f"dropped (a question emptied by rejection): {emptied}")
     print(" ", subjects)
 
     X, groups = build_matrix(subjects)

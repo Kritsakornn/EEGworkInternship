@@ -1,0 +1,24 @@
+=== 1-second non-overlapping epochs (WIN_SEC=1.0 STEP_SEC=1.0) ===
+complete subjects (Q1-Q9, files): 27
+still complete after artifact rejection: 25
+dropped (a question emptied by rejection): ['S2', 'S18']
+  ['S1', 'S3', 'S4', 'S5', 'S6', 'S7', 'S10', 'S11', 'S12', 'S13', 'S14', 'S16', 'S19', 'S22', 'S24', 'S25', 'S26', 'S27', 'S28', 'S29', 'S30', 'S31', 'S34', 'S37', 'S38']
+feature matrix: (6454, 33)  frames=6454
+cluster -> state: {0: 'Reading', 2: 'Decision', 1: 'Reasoning'}
+saved -> /Users/kritsakorn/Documents/intershipProject/outputs/tables/sri_1s.csv
+
+merged: 225 rows, 25 subjects, 9 questions
+
+[OUR SRI (1 s epochs)]
+  per-Q accuracy: Q1=0.400 Q2=0.600 Q3=0.600 Q4=0.640 Q5=0.240 Q6=0.360 Q7=0.760 Q8=0.480 Q9=0.560
+  mean per-Q accuracy = 0.516   (paper Table 2: 0.725-0.875)
+  score-level: Pearson r = -0.436  MAE = 2.360   (thesis test: r~0.74, MAE~1.0)
+
+[Professor f1/f2/f3 (same rows)]
+  per-Q accuracy: Q1=0.960 Q2=0.800 Q3=0.880 Q4=0.600 Q5=0.720 Q6=0.760 Q7=0.800 Q8=0.800 Q9=0.800
+  mean per-Q accuracy = 0.791   (paper Table 2: 0.725-0.875)
+  score-level: Pearson r = 0.764  MAE = 1.080   (thesis test: r~0.74, MAE~1.0)
+
+SRI(1 s) <-> f1/f2/f3 best mean|r| = 0.036   (2 s baseline ~0.06; chance ~0)
+
+VERDICT: 1 s epochs help only if OUR mean per-Q acc rises toward ~0.79 AND best|r| rises clearly above ~0.06.
