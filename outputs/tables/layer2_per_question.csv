@@ -1,0 +1,19 @@
+feature_set,q,acc_mean,acc_std
+Our SRI,1,0.44,0.159
+Our SRI,2,0.59,0.092
+Our SRI,3,0.55,0.118
+Our SRI,4,0.6,0.138
+Our SRI,5,0.69,0.073
+Our SRI,6,0.47,0.178
+Our SRI,7,0.64,0.097
+Our SRI,8,0.59,0.092
+Our SRI,9,0.69,0.073
+Professor f1/f2/f3,1,0.96,0.08
+Professor f1/f2/f3,2,0.69,0.284
+Professor f1/f2/f3,3,0.87,0.108
+Professor f1/f2/f3,4,0.63,0.125
+Professor f1/f2/f3,5,0.73,0.172
+Professor f1/f2/f3,6,0.83,0.154
+Professor f1/f2/f3,7,0.78,0.204
+Professor f1/f2/f3,8,0.82,0.157
+Professor f1/f2/f3,9,0.82,0.183
