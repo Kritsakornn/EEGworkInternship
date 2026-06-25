@@ -18,9 +18,12 @@ theta/alpha/beta (4-30 Hz) and normalizes within them.
 
 Run: python src/features.py
 """
+from matplotlib import backend_bases
+from cProfile import label
 import numpy as np
 import scipy.io as sio
-from scipy.signal import butter, filtfilt, iirnotch, stft
+from scipy.signal import butter, filtfilt, iirnotch, stft, welch
+import matplotlib.pyplot as plt
 
 import config
 
@@ -33,6 +36,15 @@ def _bandpass_notch(eeg):
     b, a = butter(config.FILTER_ORDER, [lo, hi], btype="band", fs=config.FS)
     bn, an = iirnotch(config.NOTCH_HZ, config.NOTCH_Q, fs=config.FS)
     eeg = filtfilt(b, a, eeg, axis=0)
+    """
+    # ------- FOR TESTING AND PLOTTING(Filter EEG) ------
+    plt.figure(figsize=(14,6))
+    plt.plot(filtfilt(bn, an, eeg, axis=0))
+    plt.title(f"EEG after filter")
+    plt.axhline(y=150e-6, color='r', linestyle='--', linewidth=1.5, label='Upper Threshold (+150 $\mu$V)')
+    plt.axhline(y=-150e-6, color='r', linestyle='--', linewidth=1.5, label='Lower Threshold (-150 $\mu$V)')
+    plt.show()
+    """
     return filtfilt(bn, an, eeg, axis=0)
 
 
@@ -51,7 +63,55 @@ def load_question_eeg(subject, q):
         parts.append(np.asarray(m[key], dtype=float))
     if not parts:
         raise FileNotFoundError(f"no cognitive files for {subject} Q{q}")
-    eeg = np.concatenate(parts, axis=0)
+    #eeg = np.concatenate(parts, axis=0)
+    eeg = parts[-1]
+
+
+    """
+    # ------- FOR TESTING AND PLOTTING(Spectrum) ------
+    eeg_filtered = _bandpass_notch(eeg)
+    freqs_raw, psd_raw = welch(eeg[:,0], fs=1000, nperseg=int(2 * 1000))
+    freqs_filt, psd_filt = welch(eeg_filtered[:,0], fs=1000, nperseg=int(2 * 1000))
+
+    plt.figure(figsize=(12, 6))
+
+    plt.semilogy(
+        freqs_raw, psd_raw, label="Raw EEG Spectrum", color="red", alpha=0.6
+    )
+    plt.semilogy(
+        freqs_filt, psd_filt, label="Filtered EEG Spectrum", color="blue", lw=1.5
+    )
+
+    plt.xlim(0, 80)
+
+    
+    # Draw vertical guide lines for filter boundaries
+    plt.axvline(1, color="gray", linestyle="--", alpha=0.5, label="1 Hz / 30 Hz Cutoffs")
+    plt.axvline(30, color="gray", linestyle="--", alpha=0.5)
+    plt.axvline(60, color="purple", linestyle=":", alpha=0.7, label="60 Hz Notch")
+
+    plt.title(f"Frequency Spectrum Verification")
+    plt.xlabel("Frequency (Hz)")
+    plt.ylabel("Power Spectral Density (V^2 / Hz)")
+    plt.grid(True, which="both", linestyle="--", alpha=0.5)
+    plt.legend()
+    plt.show()
+    """
+
+
+    
+    # ------- FOR TESTING AND PLOTTING (Raw EEG) ------
+    """
+    plt.figure(figsize=(14,6))
+    plt.plot(eeg)
+    plt.title(f"{subject} Q{q}: EEG before filter")
+    plt.axvline(x=len(eeg[:,5])/2, color='b', linestyle='-', label='Half')
+    plt.axhline(y=150e-6, color='r', linestyle='--', linewidth=1.5, label='Upper Threshold (+150 $\mu$V)')
+    plt.axhline(y=-150e-6, color='r', linestyle='--', linewidth=1.5, label='Lower Threshold (-150 $\mu$V)')
+    plt.legend()
+    plt.show()
+    """
+
     return _bandpass_notch(eeg)  # paper 1-30 Hz band-pass + 60 Hz notch
 
 
@@ -109,7 +169,7 @@ def rsp_features_allch(eeg19):
 
 
 def main():
-    subject, q = "S1", 2
+    subject, q = "S13", 6
     eeg = load_question_eeg(subject, q)
     print(f"{subject} Q{q}: loaded EEG {eeg.shape} (samples x channels)")
 
