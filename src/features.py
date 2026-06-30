@@ -42,8 +42,31 @@ def find_cognitive_files(subject, q):
     return sorted(folder.glob(f"CutEEGdata_Q{q}_*.mat"))
 
 
+def _dedupe_segments(parts):
+    """Drop segments whose rows are fully contained in a longer segment.
+
+    The iSTAR cognitive cuts ship redundant overlapping files for the only two
+    multi-part questions in the set: S1 Q1's parts differ by a 700-sample shift
+    (part1 is contained in part2), and S13 Q6 ships the same file twice. Plain
+    concatenation double-counts ~50% of such a question's signal, so a part is
+    dropped when every one of its rows already appears in a kept (longer) part.
+    Genuinely distinct segments share no full containment and are all kept."""
+    if len(parts) < 2:
+        return parts
+    rowsets = [{r.tobytes() for r in p} for p in parts]
+    kept_union, keep = set(), []
+    for i in sorted(range(len(parts)), key=lambda i: -len(parts[i])):  # longest first
+        if rowsets[i] <= kept_union:        # fully redundant with what we kept
+            continue
+        keep.append(i)
+        kept_union |= rowsets[i]
+    return [parts[i] for i in sorted(keep)]  # restore original file order
+
+
 def load_question_eeg(subject, q):
-    """Load + concatenate all cognitive segments of a question -> (n_samples, 19)."""
+    """Load + concatenate the cognitive segments of a question -> (n_samples, 19).
+
+    Redundant overlapping segments are dropped first (see _dedupe_segments)."""
     parts = []
     for f in find_cognitive_files(subject, q):
         m = sio.loadmat(f)
@@ -51,7 +74,7 @@ def load_question_eeg(subject, q):
         parts.append(np.asarray(m[key], dtype=float))
     if not parts:
         raise FileNotFoundError(f"no cognitive files for {subject} Q{q}")
-    eeg = np.concatenate(parts, axis=0)
+    eeg = np.concatenate(_dedupe_segments(parts), axis=0)
     return _bandpass_notch(eeg)  # paper 1-30 Hz band-pass + 60 Hz notch
 
 
