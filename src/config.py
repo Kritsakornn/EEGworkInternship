@@ -8,7 +8,7 @@ from pathlib import Path
 
 # --- paths ---
 ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT.parent.parent.parent / "Downloads" / "iStar_data"
+DATA_DIR = ROOT / "dataset" / "iStar_data"
 OUTPUT_DIR = ROOT / "outputs"
 FIG_DIR = OUTPUT_DIR / "figures"    # .png plots
 TABLE_DIR = OUTPUT_DIR / "tables"   # .csv data
